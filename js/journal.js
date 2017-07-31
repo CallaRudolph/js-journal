@@ -10,7 +10,7 @@ Entry.prototype.wordCount = function() {
     count++;
   }
   return count;
-}
+};
 
 Entry.prototype.vowelCount = function() {
   var count = 0;
@@ -23,7 +23,7 @@ Entry.prototype.vowelCount = function() {
     }
   }
   return count;
-}
+};
 
 Entry.prototype.consonantCount = function() {
   var count = 0;
@@ -36,6 +36,6 @@ Entry.prototype.consonantCount = function() {
     }
   }
   return count;
-}
+};
 
 exports.entryModule = Entry;
