@@ -10,8 +10,10 @@ $(document).ready(function() {
     var output = newEntry.wordCount();
     var vowelOutput = newEntry.vowelCount();
     var consonantOutput = newEntry.consonantCount();
+    var teaser = newEntry.getTeaser();
     $('#solution').text('Your whitman-esque tenor journal entry contains exactly ' + output + ' words.');
     $('#vowels').text('Vowel count is equal to ' + vowelOutput);
     $('#consonants').text('Consonant count is equal to ' + consonantOutput);
+    $('#teaser').text('Your journal entrys teaser: ' + teaser);
   });
 });
