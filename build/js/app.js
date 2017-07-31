@@ -10,8 +10,10 @@ $(document).ready(function() {
     var newEntry = new Entry(title, body);
     var output = newEntry.wordCount();
     var vowelOutput = newEntry.vowelCount();
+    var consonantOutput = newEntry.consonantCount();
     $('#solution').text('Your whitman-esque tenor journal entry contains exactly ' + output + ' words.');
     $('#vowels').text('Vowel count is equal to ' + vowelOutput);
+    $('#consonants').text('Consonant count is equal to ' + consonantOutput);
   });
 });
 
@@ -36,6 +38,19 @@ Entry.prototype.vowelCount = function() {
   for (i = 0; i < this.body.length; i++) {
     for (j = 0; j < vowelArr.length; j++) {
       if (this.body[i] === vowelArr[j]) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+Entry.prototype.consonantCount = function() {
+  var count = 0;
+  var consonantArr = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+  for (i = 0; i < this.body.length; i++) {
+    for (j = 0; j < consonantArr.length; j++) {
+      if (this.body[i] === consonantArr[j]) {
         count++;
       }
     }

@@ -25,4 +25,17 @@ Entry.prototype.vowelCount = function() {
   return count;
 }
 
+Entry.prototype.consonantCount = function() {
+  var count = 0;
+  var consonantArr = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+  for (i = 0; i < this.body.length; i++) {
+    for (j = 0; j < consonantArr.length; j++) {
+      if (this.body[i] === consonantArr[j]) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
 exports.entryModule = Entry;
