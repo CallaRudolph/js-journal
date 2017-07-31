@@ -68,8 +68,8 @@ Entry.prototype.getTeaser = function() {
   }
   var teaserStr = teaserArr.join(" ");
   for (x = 0; x < teaserStr.length; x++) {
-    if (teaserStr[x - 1] === '.') {
-      var output = teaserStr.slice(0, x)
+    if (teaserStr[x - 1] === '.') { break; } {
+      var output = teaserStr.slice(0, x + 1)
     }
   }
   return output;
