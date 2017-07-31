@@ -12,4 +12,17 @@ Entry.prototype.wordCount = function() {
   return count;
 }
 
+Entry.prototype.vowelCount = function() {
+  var count = 0;
+  var vowelArr = ['a', 'e', 'i', 'o', 'u'];
+  for (i = 0; i < this.body.length; i++) {
+    for (j = 0; j < vowelArr.length; j++) {
+      if (this.body[i] === vowelArr[j]) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
 exports.entryModule = Entry;

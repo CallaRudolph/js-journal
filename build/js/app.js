@@ -8,8 +8,10 @@ $(document).ready(function() {
     var title = $('#title').val();
     var body = $('#body').val();
     var newEntry = new Entry(title, body);
-    var output = newEntry.wordCount(body);
-    $('#solution').append(output);
+    var output = newEntry.wordCount();
+    var vowelOutput = newEntry.vowelCount();
+    $('#solution').text('Your whitman-esque tenor journal entry contains exactly ' + output + ' words.');
+    $('#vowels').text('Vowel count is equal to ' + vowelOutput);
   });
 });
 
@@ -24,6 +26,19 @@ Entry.prototype.wordCount = function() {
   var bodyArr = this.body.split(" ");
   for (i = 0; i < bodyArr.length; i++) {
     count++;
+  }
+  return count;
+}
+
+Entry.prototype.vowelCount = function() {
+  var count = 0;
+  var vowelArr = ['a', 'e', 'i', 'o', 'u'];
+  for (i = 0; i < this.body.length; i++) {
+    for (j = 0; j < vowelArr.length; j++) {
+      if (this.body[i] === vowelArr[j]) {
+        count++;
+      }
+    }
   }
   return count;
 }
