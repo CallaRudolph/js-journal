@@ -45,7 +45,12 @@ Entry.prototype.getTeaser = function() {
     teaserArr.push(bodyArr[i]);
   }
   var teaserStr = teaserArr.join(" ");
-  return teaserStr;
+  for (x = 0; x < teaserStr.length; x++) {
+    if (teaserStr[x - 1] === '.') {
+      var output = teaserStr.slice(0, x)
+    }
+  }
+  return output;
 };
 
 exports.entryModule = Entry;
